@@ -1,9 +1,8 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
-import NewsCard from "@/components/NewsCard.astro";
-import RecentNews from "@/components/AsideNews.astro";
 
-import { Image } from "astro:assets";
+import NewsCard from "@/components/NewsCard.astro";
+import Sidebar from "@/components/Sidebar.astro";
 
 const news = [
 {
@@ -73,6 +72,6 @@ const news = [
       ))}
     </div>
 
-    <RecentNews/>
+    <Sidebar/>
   </div>
 </MainLayout>
