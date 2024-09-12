@@ -1,0 +1,78 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import NewsCard from "@/components/NewsCard.astro";
+import RecentNews from "@/components/AsideNews.astro";
+
+import { Image } from "astro:assets";
+
+const news = [
+{
+  id: 1,
+  title: "BUAP inaugura nuevo laboratorio de investigación",
+  resume: "El nuevo laboratorio permitirá avances significativos en el campo de la biotecnología, fortaleciendo la posición de la BUAP como líder en investigación científica.",
+  content: "La Benemérita Universidad Autónoma de Puebla (BUAP) ha dado un paso importante en su compromiso con la investigación científica al inaugurar un nuevo laboratorio de biotecnología...",
+  author: "Dr. Juan Pérez",
+  date: "2023-05-15",
+  views: 120,
+  image: "https://boletin.buap.mx/sites/default/files/styles/boletines_vista/public/01%20A_MexicoSinfonico.jpg?itok=ZpAiibfh",
+  category: "Investigación"
+},
+{
+  id: 2,
+  title: "Estudiantes de la BUAP ganan concurso nacional de robótica",
+  resume: "El equipo de robótica de la BUAP se llevó el primer lugar en la competencia nacional, demostrando la excelencia académica de la institución.",
+  content: "Un grupo de estudiantes de la Facultad de Ciencias de la Computación de la BUAP ha logrado un hito importante al ganar el primer lugar en el Concurso Nacional de Robótica...",
+  author: "Lic. María González",
+  date: "2023-05-10",
+  views: 85,
+  image: "https://boletin.buap.mx/sites/default/files/styles/boletines_vista/public/01_A%20MtraTeresa.jpg?itok=418o3wS6",
+  category: "Estudiantes"
+},
+{
+  id: 3,
+  title: "BUAP firma convenio con universidad extranjera",
+  resume: "El acuerdo permitirá intercambios estudiantiles y colaboraciones en investigación, fortaleciendo la presencia internacional de la BUAP.",
+  content: "La Benemérita Universidad Autónoma de Puebla ha firmado un importante convenio de colaboración con la Universidad de California, Berkeley...",
+  author: "Mtro. Carlos Rodríguez",
+  date: "2023-05-05",
+  views: 63,
+  image: "https://boletin.buap.mx/sites/default/files/styles/boletines_vista/public/01_ACarrera24.jpg?itok=XmCSIQVg",
+  category: "Internacional"
+},
+
+{
+  id: 4,
+  title: "BUAP firma convenio con universidad extranjera",
+  resume: "El acuerdo permitirá intercambios estudiantiles y colaboraciones en investigación, fortaleciendo la presencia internacional de la BUAP.",
+  content: "La Benemérita Universidad Autónoma de Puebla ha firmado un importante convenio de colaboración con la Universidad de California, Berkeley...",
+  author: "Mtro. Carlos Rodríguez",
+  date: "2023-05-05",
+  views: 63,
+  image: "https://boletin.buap.mx/sites/default/files/styles/boletines_vista/public/01_ACarrera24.jpg?itok=XmCSIQVg",
+  category: "Internacional"
+},
+{
+  id: 5,
+  title: "BUAP firma convenio con universidad extranjera",
+  resume: "El acuerdo permitirá intercambios estudiantiles y colaboraciones en investigación, fortaleciendo la presencia internacional de la BUAP.",
+  content: "La Benemérita Universidad Autónoma de Puebla ha firmado un importante convenio de colaboración con la Universidad de California, Berkeley...",
+  author: "Mtro. Carlos Rodríguez",
+  date: "2023-05-05",
+  views: 63,
+  image: "https://boletin.buap.mx/sites/default/files/styles/boletines_vista/public/01_ACarrera24.jpg?itok=XmCSIQVg",
+  category: "Internacional"
+}
+];
+---
+<MainLayout>
+  <h2 class="mb-6 text-3xl font-bold">Noticias BUAP</h2>
+  <div class="flex flex-col gap-8 md:flex-row">
+    <div class="space-y-8 md:w-2/3">
+      {news.slice(0,5).map(({id, title, resume, author, date, views, image}) => (
+        <NewsCard title={title} resume={resume} image={image} author={author} date={date} views={views}/>
+      ))}
+    </div>
+
+    <RecentNews/>
+  </div>
+</MainLayout>
