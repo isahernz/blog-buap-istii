@@ -1,0 +1,13 @@
+---
+interface Props{
+  image: string
+}
+const {image} = Astro.props
+---
+<div class="md:flex-shrink-0">
+  <img
+    src={image}
+    alt= "Cultura"
+    class="h-full w-full object-cover md:w-48"
+  />
+</div>
