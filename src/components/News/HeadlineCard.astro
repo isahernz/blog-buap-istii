@@ -1,4 +1,6 @@
 ---
+import Date from './Date.astro';
+
 interface Props{
   title: string;
   date: string;
@@ -9,9 +11,9 @@ const {title, date} = Astro.props;
 <li  class="border-b border-gray-200 pb-2">
   <a href="#" class="hover:text-blue-600">
     <h4 class="font-medium">{title}</h4>
-    <div>
+    <div class="flex justify-end">
       <!-- Category -->
-      <!-- Date -->
+      <Date date={date}/>
     </div>
   </a>
 </li>
