@@ -6,15 +6,28 @@ import Sidebar from "@/components/Sidebar.astro";
 
 import news from "@/data/data.json";
 ---
-<MainLayout>
+
+<MainLayout
+  title="Benemérita Universidad Autónoma de Puebla"
+  description="Convocatorias y Avisos · Maestría en Estudios Sociales: Trabajo, Regulación Laboral · Especialidad en Biotecnología Aplicada · Maestría Ciencias Fisiológicas."
+>
   <h2 class="mb-6 text-3xl font-bold">Noticias BUAP</h2>
   <div class="flex flex-col gap-8 md:flex-row">
     <div class="space-y-8 md:w-2/3">
-      {news.map(({id, title, resume, author, date, views, image}) => (
-        <NewsCard title={title} resume={resume} image={image} author={author} date={date} views={views}/>
-      ))}
+      {
+        news.map(({ id, title, resume, author, date, views, image }) => (
+          <NewsCard
+            title={title}
+            resume={resume}
+            image={image}
+            author={author}
+            date={date}
+            views={views}
+          />
+        ))
+      }
     </div>
 
-    <Sidebar/>
+    <Sidebar />
   </div>
 </MainLayout>
