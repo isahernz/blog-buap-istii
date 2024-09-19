@@ -1,10 +1,20 @@
 ---
-interface Props{
-  date: string
+import dayjs from "dayjs";
+import "dayjs/locale/es";
+
+import { Icon } from "astro-icon/components";
+
+dayjs.locale("es");
+
+interface Props {
+  date: string;
 }
 
-const {date} = Astro.props
+const { date } = Astro.props;
+const dateFormatted = dayjs(date).locale("es").format("dddd, MMMM DD, YYYY");
 ---
 
-
-<span class="text-sm">{date}</span>
+<span class="flex items-center gap-1 text-xs text-gray-500">
+  <!-- <Icon class="h-4 w-4" name="date" /> -->
+  {dateFormatted}
+</span>
