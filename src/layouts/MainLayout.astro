@@ -1,10 +1,12 @@
 ---
+import { ClientRouter } from "astro:transitions";
+
 import Navbar from "@/components/Navbar.astro";
 import Footer from "@/components/Footer.astro";
 
 interface Props {
   title: string;
-  description: string;
+  description?: string;
 }
 
 const { title, description } = Astro.props;
@@ -17,10 +19,12 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <title>{title}</title>
+
+    <ClientRouter />
   </head>
   <body>
     <Navbar />
-    <main class="mx-auto max-w-7xl flex-grow px-4 py-8">
+    <main class="mx-auto min-h-dvh max-w-7xl flex-grow px-4 py-8">
       <slot />
     </main>
     <Footer />
