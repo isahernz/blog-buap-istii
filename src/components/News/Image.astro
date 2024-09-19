@@ -1,13 +1,14 @@
 ---
-interface Props{
-  image: string
+interface Props {
+  image: string;
 }
-const {image} = Astro.props
+const { image } = Astro.props;
 ---
-<div class="md:flex-shrink-0">
+
+<figure class="h-40 w-60">
   <img
     src={image}
-    alt= "Cultura"
-    class="h-full w-full object-cover md:w-48"
+    alt="Cultura"
+    class="h-full w-full rounded object-cover transition hover:scale-110"
   />
-</div>
+</figure>

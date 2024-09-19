@@ -1,10 +1,14 @@
 ---
-import MainLayout from "@/layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
 
+import MainLayout from "@/layouts/MainLayout.astro";
 import NewsCard from "@/components/News/NewsCard.astro";
 import Sidebar from "@/components/Sidebar.astro";
 
-import news from "@/data/news.json";
+// import news from "@/data/news.json";
+
+const news = await getCollection("news");
+console.log(news);
 ---
 
 <MainLayout
@@ -15,17 +19,21 @@ import news from "@/data/news.json";
   <div class="flex flex-col gap-8 md:flex-row">
     <div class="space-y-8 md:w-2/3">
       {
-        news
-          .slice(0, 3)
-          .map(({ id, title, resume, date, views, banner }) => (
+        news.map((reportage) => {
+          const { slug, data } = reportage;
+          const { title, image, date, category, gallery } = data;
+
+          return (
             <NewsCard
+              gallery={gallery}
               title={title}
-              resume={resume}
-              image={banner}
+              image={image}
               date={date}
-              views={views}
+              category={category}
+              url={slug}
             />
-          ))
+          );
+        })
       }
     </div>
 
