@@ -26,8 +26,6 @@ const { title, resume, date, image, views } = Astro.props;
       <Title text={title} />
       <Resume written={resume} />
       <div class="mb-4 flex items-center text-sm text-gray-500">
-        <Icon class="h-4 w-4" name="author" />
-        <Icon class="h-4 w-4" name="date" />
         <Date date={date} />
       </div>
       <div class="flex items-center justify-between">

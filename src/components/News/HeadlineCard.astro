@@ -1,19 +1,20 @@
 ---
-import Date from './Date.astro';
+import Date from "./Date.astro";
 
-interface Props{
+interface Props {
   title: string;
   date: string;
 }
 
-const {title, date} = Astro.props;
+const { title, date } = Astro.props;
 ---
-<li  class="border-b border-gray-200 pb-2">
+
+<li class="flex flex-col gap-2 border-b border-gray-200 pb-2">
   <a href="#" class="hover:text-blue-600">
-    <h4 class="font-medium">{title}</h4>
-    <div class="flex justify-end">
-      <!-- Category -->
-      <Date date={date}/>
-    </div>
+    <h4 class="text-pretty text-sm">{title}</h4>
   </a>
+  <div class="flex justify-end">
+    <!-- category -->
+    <Date date={date} />
+  </div>
 </li>
