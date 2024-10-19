@@ -7,12 +7,12 @@ import react from "@astrojs/react";
 
 import icon from "astro-icon";
 
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel/static";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react(), icon()],
-  output: "server",
+  // output: "server",
   adapter: vercel({
     webAnalytics: { enabled: true },
   }),
@@ -20,7 +20,7 @@ export default defineConfig({
     schema: {
       STRAPI_HOST: envField.string({ context: "client", access: "public" }),
       STRAPI_TOKEN: envField.string({ context: "server", access: "secret" }),
-      IP_API_ENDPOINT: envField.string({ context: "server", access: "public" }),
+      IP_API_ENDPOINT: envField.string({ context: "client", access: "public" }),
     },
   },
 });
