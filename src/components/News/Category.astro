@@ -1,0 +1,17 @@
+---
+interface TagCategoryProps {
+  name: string;
+  class?: string;
+}
+
+const { class: className, name } = Astro.props as TagCategoryProps;
+---
+
+<span
+  class:list={[
+    `max-w-max text-nowrap bg-gray-400 px-10 py-2 text-xs text-white`,
+    className,
+  ]}
+>
+  {name}
+</span>

@@ -1,34 +1,11 @@
-<header class="bg-azul-marino">
-  <nav class="mx-auto flex max-w-7xl gap-6 py-2 text-white">
-    <img src="/buap-escudo.png" alt="Escudo BUAP" />
+---
+import Navigation from "@components/common/Navigation.astro";
+import Logo from "./common/Logo.astro";
+---
 
-    <ul class="flex items-center gap-4 text-sm">
-      <li><a href="/">Institucional</a></li>
-      <li>
-        <a href="https://www.buap.mx/historia_universitaria" target="_blank"
-          >Nosotros</a
-        >
-      </li>
-      <li><a href="https://admision.buap.mx/" target="_blank">Admisión</a></li>
-      <li>
-        <a
-          href="https://des.buap.mx/?q=content/oferta-educativa-0"
-          target="_blank">Oferta Educativa</a
-        >
-      </li>
-      <li><a href="/life" target="_blank">Vida Universitaria</a></li>
-      <li><a href="https://cgau.buap.mx/" target="_blank">Vinculación</a></li>
-      <li>
-        <a href="https://www.buap.mx/content/becas" target="_blank"
-          >Becas BUAP</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://consultapublicamx.plataformadetransparencia.org.mx/vut-web/?idSujetoObigadoParametro=4479&idEntidadParametro=21&idSectorParametro=24"
-          target="_blank">Transparencia</a
-        >
-      </li>
-    </ul>
-  </nav>
+<header class="bg-navy-blue">
+  <div class="mx-auto flex max-w-7xl gap-8 p-2">
+    <Logo />
+    <!-- <Navigation /> -->
+  </div>
 </header>

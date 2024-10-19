@@ -1,0 +1,44 @@
+---
+import Link from "./Link.astro";
+
+const links = [
+  {
+    name: "Institucional",
+    url: "/",
+  },
+  {
+    name: "Nosotros",
+    url: "https://www.buap.mx/historia_universitaria",
+  },
+  {
+    name: "Admisión",
+    url: "https://admision.buap.mx/",
+  },
+  {
+    name: "Oferta Educativa",
+    url: "https://des.buap.mx/?q=content/oferta-educativa-0",
+  },
+  {
+    name: "Vida Universitaria",
+    url: "/life",
+  },
+  {
+    name: "Vinculación",
+    url: "https://cgau.buap.mx/",
+  },
+  {
+    name: "Becas BUAP",
+    url: "https://www.buap.mx/content/becas",
+  },
+  {
+    name: "Transparencia",
+    url: "https://consultapublicamx.plataformadetransparencia.org.mx/vut-web/?idSujetoObigadoParametro=4479&idEntidadParametro=21&idSectorParametro=24",
+  },
+];
+---
+
+<nav class="flex gap-6 text-white">
+  <ul class="flex items-center gap-4 text-sm">
+    {links.map(({ name, url }) => <Link url={url} name={name} />)}
+  </ul>
+</nav>

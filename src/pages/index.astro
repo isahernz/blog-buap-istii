@@ -1,14 +1,10 @@
 ---
-import { getCollection } from "astro:content";
-
 import MainLayout from "@/layouts/MainLayout.astro";
 import NewsCard from "@/components/News/NewsCard.astro";
 import Sidebar from "@/components/Sidebar.astro";
+import { getPosts } from "@lib/get-post";
 
-// import news from "@/data/news.json";
-
-const news = await getCollection("news");
-console.log(news);
+const posts = await getPosts();
 ---
 
 <MainLayout
@@ -17,26 +13,25 @@ console.log(news);
 >
   <h2 class="mb-6 text-3xl font-bold">Noticias BUAP</h2>
   <div class="flex flex-col gap-8 md:flex-row">
-    <div class="space-y-8 md:w-2/3">
+    <div class="space-y-8">
       {
-        news.map((reportage) => {
-          const { slug, data } = reportage;
-          const { title, image, date, category, gallery } = data;
-
+        posts.map((post) => {
+          const { gallery, title, cover, date, category, slug, description } =
+            post;
           return (
             <NewsCard
               gallery={gallery}
               title={title}
-              image={image}
+              image={cover.url}
               date={date}
-              category={category}
+              category={category.title}
               url={slug}
+              description={description}
             />
           );
         })
       }
     </div>
-
     <Sidebar />
   </div>
 </MainLayout>

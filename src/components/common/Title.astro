@@ -1,0 +1,11 @@
+---
+import { IP_API_ENDPOINT } from "astro:env/server";
+
+const response = await fetch(IP_API_ENDPOINT);
+const ip = await response.text();
+---
+
+<h3 class="mb-4 text-xl font-semibold">
+  Noticias Anteriores
+  <span class="text-sm font-normal text-gray-500">({ip})</span>
+</h3>
